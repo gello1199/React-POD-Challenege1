@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Costume from './Costume'
 
 function App() {
+  const costumes = [{name: "Care Bear", type: "kid", colors: ["red", "blue", "purple"]},
+  {name: "Rock Star", type: "adult", colors: ["red", "silver", "gold"]},
+  {name: "Cat", type: "kid", colors: ["black", "orange"]}]
+
+  const costumeElement = costumes.map(c => <Costume name={c.name} type={c.type} colors={c.colors} />)
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     {costumeElement}
     </div>
   );
 }
